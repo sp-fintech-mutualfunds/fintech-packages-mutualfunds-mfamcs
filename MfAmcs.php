@@ -42,12 +42,12 @@ class MfAmcs extends BasePackage
         return false;
     }
 
-    public function addMfHouses($data)
+    public function addMfAmcs($data)
     {
         //
     }
 
-    public function updateMfHouses($data)
+    public function updateMfAmcs($data)
     {
         $mfamcs = $this->getById($id);
 
@@ -61,7 +61,7 @@ class MfAmcs extends BasePackage
         $this->addResponse('Error', 1);
     }
 
-    public function removeMfHouses($data)
+    public function removeMfAmcs($data)
     {
         $mfamcs = $this->getById($id);
 
