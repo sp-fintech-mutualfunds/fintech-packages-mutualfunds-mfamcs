@@ -1,6 +1,6 @@
 <?php
 
-namespace Apps\Fintech\Packages\Mf\Houses;
+namespace Apps\Fintech\Packages\Mf\Amcs;
 
 use Apps\Fintech\Packages\Mf\Amcs\Model\AppsFintechMfAmcs;
 use System\Base\BasePackage;
@@ -13,7 +13,7 @@ class MfAmcs extends BasePackage
 
     public $mfamcs;
 
-    public function getMfHouseByCode($code)
+    public function getMfAmcByCode($code)
     {
         if ($this->config->databasetype === 'db') {
             $conditions =
@@ -33,10 +33,10 @@ class MfAmcs extends BasePackage
                 ];
         }
 
-        $mfhouse = $this->getByParams($conditions);
+        $mfamc = $this->getByParams($conditions);
 
-        if ($mfhouse && count($mfhouse) > 0) {
-            return $mfhouse[0];
+        if ($mfamc && count($mfamc) > 0) {
+            return $mfamc[0];
         }
 
         return false;
