@@ -13,22 +13,22 @@ class MfAmcs extends BasePackage
 
     public $mfamcs;
 
-    public function getMfAmcByCode($code)
+    public function getMfAmcByName($name)
     {
         if ($this->config->databasetype === 'db') {
             $conditions =
                 [
-                    'conditions'    => 'amc_code = :code:',
+                    'conditions'    => 'name = :name:',
                     'bind'          =>
                         [
-                            'code'  => $code
+                            'name'  => $name
                         ]
                 ];
         } else {
             $conditions =
                 [
                     'conditions'    => [
-                        ['amc_code', '=', $code]
+                        ['name', '=', $name]
                     ]
                 ];
         }

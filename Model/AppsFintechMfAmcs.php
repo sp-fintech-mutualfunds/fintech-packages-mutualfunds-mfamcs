@@ -8,17 +8,11 @@ class AppsFintechMfAmcs extends BaseModel
 {
     public $id;
 
-    public $amc_code;
-
-    public $amc_name;
-
-    public $available_for_purchase;
+    public $name;
 
     public $description;
 
     public $image;
-
-    public $short_code;
 
     public $rta_info;
 

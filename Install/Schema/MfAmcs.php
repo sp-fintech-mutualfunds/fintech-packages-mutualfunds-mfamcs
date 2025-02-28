@@ -22,26 +22,11 @@ class MfAmcs
                     ]
                 ),
                 new Column(
-                    'amc_code',
+                    'name',
                     [
                         'type'          => Column::TYPE_VARCHAR,
                         'size'          => 255,
                         'notNull'       => true,
-                    ]
-                ),
-                new Column(
-                    'amc_name',
-                    [
-                        'type'          => Column::TYPE_VARCHAR,
-                        'size'          => 255,
-                        'notNull'       => true,
-                    ]
-                ),
-                new Column(
-                    'available_for_purchase',
-                    [
-                        'type'          => Column::TYPE_TINYINTEGER,
-                        'notNull'       => false,
                     ]
                 ),
                 new Column(
@@ -56,14 +41,6 @@ class MfAmcs
                     [
                         'type'          => Column::TYPE_VARCHAR,
                         'size'          => 255,
-                        'notNull'       => false,
-                    ]
-                ),
-                new Column(
-                    'short_code',
-                    [
-                        'type'          => Column::TYPE_VARCHAR,
-                        'size'          => 100,
                         'notNull'       => false,
                     ]
                 ),
@@ -112,7 +89,7 @@ class MfAmcs
                 new Index(
                     'column_UNIQUE',
                     [
-                        'contact_email'
+                        'name'
                     ],
                     'UNIQUE'
                 )
@@ -130,8 +107,7 @@ class MfAmcs
             new Index(
                 'column_INDEX',
                 [
-                    'amc_code',
-                    'amc_name'
+                    'name'
                 ],
                 'INDEX'
             )
