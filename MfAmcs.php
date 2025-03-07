@@ -24,16 +24,15 @@ class MfAmcs extends BasePackage
                             'name'  => $name
                         ]
                 ];
-        } else {
-            $conditions =
-                [
-                    'conditions'    => [
-                        ['name', '=', $name]
-                    ]
-                ];
-        }
 
-        $mfamc = $this->getByParams($conditions);
+            $mfamc = $this->getByParams($conditions);
+        } else {
+            $this->ffStore = $this->ff->store($this->ffStoreToUse);
+
+            $this->ffStore->setReadIndex(false);
+
+            $mfamc = $this->ffStore->findBy(['name', '=', $name]);
+        }
 
         if ($mfamc && count($mfamc) > 0) {
             return $mfamc[0];
@@ -44,7 +43,11 @@ class MfAmcs extends BasePackage
 
     public function addMfAmcs($data)
     {
-        //
+        $this->ffStore = $this->ff->store($this->ffStoreToUse);
+
+        $this->ffStore->setReadIndex(false);
+
+        return $this->add($data);
     }
 
     public function updateMfAmcs($data)
