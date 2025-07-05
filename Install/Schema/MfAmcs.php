@@ -84,6 +84,13 @@ class MfAmcs
                         'notNull'       => false,
                     ]
                 ),
+                new Column(
+                    'turn_around_time',
+                    [
+                        'type'          => Column::TYPE_TINYINTEGER,
+                        'notNull'       => false,
+                    ]
+                )
             ],
             'indexes' => [
                 new Index(

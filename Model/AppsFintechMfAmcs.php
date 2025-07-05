@@ -23,4 +23,6 @@ class AppsFintechMfAmcs extends BaseModel
     public $website;
 
     public $contact_email;
+
+    public $turn_around_time;
 }
