@@ -52,29 +52,19 @@ class MfAmcs extends BasePackage
 
     public function updateMfAmcs($data)
     {
-        $mfamcs = $this->getById($id);
+        $this->ffStore = $this->ff->store($this->ffStoreToUse);
 
-        if ($mfamcs) {
-            //
-            $this->addResponse('Success');
+        $this->ffStore->setReadIndex(false);
 
-            return;
+        if ($data['turn_around_time'] === '') {
+            $data['turn_around_time'] = null;
         }
 
-        $this->addResponse('Error', 1);
+        return $this->update($data);
     }
 
     public function removeMfAmcs($data)
     {
-        $mfamcs = $this->getById($id);
-
-        if ($mfamcs) {
-            //
-            $this->addResponse('Success');
-
-            return;
-        }
-
-        $this->addResponse('Error', 1);
+        //
     }
 }
